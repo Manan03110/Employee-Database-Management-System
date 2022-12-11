@@ -1,0 +1,50 @@
+Name=[]
+Salary=[]
+emp_dict={'empname':Name,'salary':Salary}
+choice=1
+while choice!=0:
+    print('1. Add Employee Detail')
+    print('2. Show all employee detail')
+    print('3. Search employee')
+    print('4. To find the largest of three numbers')
+    print('0. Quit')
+    choice=int(input('Enter Your Choice :'))
+    if choice==1:
+        name=input('Enter Name : ')
+        salary=eval(input('Enter Salary : '))
+        Name.append(name)
+        Salary.append(salary)
+    elif choice==2:
+        print('*************EMPLOYEE DETAILS***************')
+        print('%20s'%'NAME','%10s'%'SALARY')
+        print('--------------------------------------------')
+        n=emp_dict['empname']
+        s=emp_dict['salary']
+        for i in range(len(n)):
+            print('%20s'%n[i],'%10s'%s[i])
+        print('--------------------------------------------')
+    elif choice==3:
+        print('Enter name to search')
+        name=input('Enter Name :')
+        n=emp_dict['empname']
+        s=emp_dict['salary']
+        try:
+                pos=n.index(name)
+                print('## Record Found ##')
+                print('Salary',s[pos])
+        except:
+                print('## Record not found ##')
+    elif choice==4:
+        a=eval(input('Enter the first number =>'))
+        b=eval(input('Enter the second number =>'))
+        c=eval(input('Enter the third number =>'))
+        if(a>b):
+            if(a>c):
+                print(a,'is the largest number')
+        elif(b>a):
+            if(b>c):
+                print(b,'is the largest number')
+        else:
+            print(c,'is the largest number')
+    elif choice==0:						   
+        print("#### Exitting the program ####")
